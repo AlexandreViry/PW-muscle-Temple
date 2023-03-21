@@ -19,24 +19,21 @@ header {
     position: absolute;
     width: 100%;
     height: 12%;
+    min-height: 110px;
 }
 
 /*logo empresa*/
 header img {
+    width: min(12%, 157px);
     height: auto;
-    max-width: 157px;
-    margin: 0.5%;
 }
 
 /* Menú Central*/
 .navbar {
-    /*Para que los elementos se situen en el medio de la pagina y no en la mitad de su div,
-            que no sea realmente el centro*/
     position: absolute;
-    left: 50%;
-    transform: translatex(-50%);
+    justify-content: center;
     text-align: center;
-    width: 50%;
+    width: 100%;
 }
 
 .navbar a {
@@ -50,9 +47,11 @@ header img {
 
 /*Area Registro*/
 header>div {
+    position: absolute;
     display: flex;
     align-items: center;
-    width: 15%;
+    width: auto;
+    right: 2.5%;
 }
 
 header>div>a {
@@ -88,7 +87,9 @@ section {
     grid-area: superponerCards;
     width: 100%;
     max-width: 2000px;
-    height: 100%;
+    height: 53%;
+    top: 12%;
+    position: absolute;
 }
 
 #eslogan {
