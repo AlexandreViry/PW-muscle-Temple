@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css" media="screen">
+    <title>Pagina principal de la web</title>
+
+    <!--INCLUIR FUENTE-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <!--FIN FUENTE-->
+</head>
+
+<body>
+    <header>
+        <!-- Image logo -->
+        <img src="img/logo.svg" alt="logo Empresa">
+        <nav class="navbar">
+            <a href="instalaciones.html">Instalaciones</a>
+            <a href="horarios.html">Horarios</a>
+            <a href="actividades.html">Actividades</a>
+            <a href="blog.html">Blog</a>
+        </nav>
+        <div>
+            <a href="#">Inicia Sesión</a>
+            <input type="button" value="Regístrate">
+        </div>
+        
+    </header>
+
+    <section>
+            <!--Imagen que sirve de fondo de la web donde superponemos las cards con la informacion-->
+            <img id="fondoindex" src="img/fondoIndex.png" alt="">
+
+            <!-- Eslogan principal que se superpondrá en la imagen encima de las cards-->
+            <h1 id="eslogan">EL DEPORTE, AL ALCANCE DE TU MANO</h1>
+            
+            <article>
+                <!--Contenedor donde irán situadas las cards encima de la imagen-->
+                <div class="containerCards">
+                    <!--Estructuras Cards-->
+                    <div class="tarjetaInfo">
+                        <div class="titulo">
+                            <img class="iconNumberTitulo" src="img/1.png" alt="uno">
+                            <a href="salaReservas.html">Reserva</a>
+                        </div>
+                        <hr>
+                        <div class="cuerpo">
+                            <p>Mira todos los horarios disponibles en nuestros mejores centros deportivos en dónde podrás
+                                reservar de forma muy sencilla.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tarjetaInfo">
+                        <div class="titulo">
+                            <img class="iconNumberTitulo" src="img/1.png" alt="uno">
+                            <a href="instalaciones.html">Instalaciones</a>
+                        </div>
+                        <hr>
+                        <div class="cuerpo">
+                            <p>Conoce un poco más los centros, como están equipados, que deportes hay disponibles en tu zona, y
+                                el equipamiento necesario para disfrutar</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjetaInfo">
+                        <div class="titulo">
+                            <img class="iconNumberTitulo" src="img/1.png" alt="uno">
+                            <a href="salas.html">Únete a la comunidad</a>
+                        </div>
+                        <hr>
+                        <div class="cuerpo">
+                            <p>Create una cuenta, disfruta de todas nuestras ventajas para socios, comparte y publica reseñas
+                                para ayudar a la comunidad.
+                            </p>
+                        </div>
+                    </div>
+                    <!--FIN Estructuras Cards-->
+                </div>
+            </article>
+    </section>
+    
+    <aside>
+        <div id="containerTituloAside">
+            <h1>Sitios webs más reservados:</h1>
+            <a href="salas.html"> Ver más sitios en tu zona ></a>
+        </div>
+
+        <div class="containerCards">
+            <div class="tarjetaAside">
+                <div class="tituloCardAside">
+                    <a class="nombreCentro" href="reservas.html">Bahía Sur</a>
+                    <img class="imgCards" src="img/bahiasur.jpg" alt="bahiasur">
+                </div>
+                <div class="cuerpo">
+                    <div class="ubicacion">
+                        <img class="imgUbicacion" src="img/ubicacion.png" alt="ubicacion">
+                        <p class="textoUbicacion">San fernando, Centro Comercial Bahia Sur, 11023</p>
+                    </div>
+                    <img class="imgEstrellas" src="img/estrellas.png" alt="estrellas">
+                    <a href="reservas.html" type="button" class="botonReserva">Reserva</a>
+                </div>
+            </div>
+
+            <div class="tarjetaAside">
+                <div class="tituloCardAside">
+                    <a class="nombreCentro" href="reservas.html">Bahía Sur</a>
+                    <img class="imgCards" src="img/bahiasur.jpg" alt="bahiasur">
+                </div>
+                <div class="cuerpo">
+                    <div class="ubicacion">
+                        <img class="imgUbicacion" src="img/ubicacion.png" alt="ubicacion">
+                        <p class="textoUbicacion">San fernando, Centro Comercial Bahia Sur, 11023</p>
+                    </div>
+                    <img class="imgEstrellas" src="img/estrellas.png" alt="estrellas">
+                    <a href="reservas.html" type="button" class="botonReserva">Reserva</a>
+                </div>
+            </div>
+
+            <div class="tarjetaAside">
+                <div class="tituloCardAside">
+                    <a class="nombreCentro" href="reservas.html">Bahía Sur</a>
+                    <img class="imgCards" src="img/bahiasur.jpg" alt="bahiasur">
+                </div>
+                <div class="cuerpo">
+                    <div class="ubicacion">
+                        <img class="imgUbicacion" src="img/ubicacion.png" alt="ubicacion">
+                        <p class="textoUbicacion">San fernando, Centro Comercial Bahia Sur, 11023</p>
+                    </div>
+                    <img class="imgEstrellas" src="img/estrellas.png" alt="estrellas">
+                    <a href="reservas.html" type="button" class="botonReserva">Reserva</a>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+    <footer>
+        <div class="enlaces">
+            <a href="#">Gades Sports</a>
+            <a href="#">Legals</a>
+            <a href="#">Our Solutions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="redes sociales">
+            <img src="img/iconTwitter.png" alt="Twitter">
+            <img src="img/iconInstagram.png" alt="Instagram">
+            <img src="img/iconFacebook.png" alt="Facebook">
+        </div>
+        <p>© 2022 GadesSports, All right reserved.</p>
+    </footer>
+
+</body>
+
+</html>
