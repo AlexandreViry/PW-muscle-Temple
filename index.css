@@ -298,12 +298,12 @@ section input {
 
 footer {
     background-color: #D9D9D9;
-    margin-bottom: 0px;
-    padding-top: 2%;
+    bottom: 0%;
+    padding-top: 1%;
     padding-bottom: 0.5%;
     width: 100%;
+    display: block;
     position: relative;
-    max-height: 280px;
 }
 
 .enlaces {
@@ -319,8 +319,8 @@ footer {
 
 .redes_sociales {
     text-align: center;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 .redes_sociales img {
@@ -329,8 +329,8 @@ footer {
 
 p {
     text-align: center;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
     font-size: small;
 }
 
