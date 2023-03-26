@@ -1,0 +1,344 @@
+/*Definimos los ajustes generales de la web*/
+body {
+    background: rgba(61, 184, 155, 0.005);
+    font-family: 'Inter', sans-serif;
+    margin: 0%;
+}
+
+/*Eliminamos el subrayado en las etiquetas a*/
+a {
+    text-decoration: none
+}
+
+/*Estilo Header*/
+header {
+    background-color: rgba(93, 167, 219, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    height: 12%;
+    min-height: 110px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/*logo empresa*/
+header img {
+    width: min(12%, 157px);
+    height: auto;
+}
+
+/* Menú Central*/
+.navbar {
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.navbar a {
+    padding: 2%;
+    color: #6B7280;
+    font-weight: bolder;
+    font-size: 0.9em;
+}
+
+/*FIN Menú Central*/
+
+/*Area Registro*/
+header>div {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 11%;
+    right: 2.5%;
+}
+
+header>div>a {
+    align-self: center;
+    color: #6B7280;
+    font-weight: bolder;
+    font-size: 0.9em;
+    margin-right: 4%;
+}
+
+header>div>input {
+    background-color: rgba(88, 55, 208, 1);
+    color: white;
+    font-weight: bolder;
+    font-size: 0.9em;
+    border-radius: 5px;
+    border: 0px;
+    padding: 5%;
+}
+
+/*FIN Area Registro*/
+/*FIN estilo header*/
+
+/*Superponer elementos en la img principal*/
+section {
+    /*Uso del grid que nos permite la superposición*/
+    display: grid;
+    grid-template-areas: "superponerCards";
+    justify-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 2000px;
+    height: 53%;
+    top: 12%;
+}
+
+#fondoindex {
+    filter: brightness(85%);
+    grid-area: superponerCards;
+    width: 100%;
+    max-width: 2000px;
+}
+
+section h2 {
+    width: 40%;
+    height: 10%;
+    grid-area: superponerCards;
+    font-size: 3vw;
+    font-weight: bolder;
+    position: relative;
+    margin-top: 5%;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+section h1 {
+    grid-area: superponerCards;
+    position: relative;
+    margin-top: 12%;
+
+    font-family: 'Montserrat';
+    font-size: 6em;
+    font-weight: 900;
+    color: #B3DAF5;
+    mix-blend-mode: normal;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+section h3 {
+    grid-area: superponerCards;
+    position: relative;
+    margin-top: 18%;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 8em;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+section input {
+    grid-area: superponerCards;
+    box-sizing: border-box;
+
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 27%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    position: relative;
+    width: 194.31px;
+    height: 40px;
+    border: 1px solid #FFFFFF;
+    border-radius: 9px;
+    font-size: large;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+/*FIN Superponer elementos en la img principal*/
+
+/*Title framed*/
+
+.framed_title {
+    position: relative;
+    width: 75%;
+    margin-left: 12.5%;
+    margin-bottom: 5%;
+}
+
+.framed_title h1 {
+    width: 65%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 3em;
+    color: #FFFFFF;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-text-stroke: 1px black;
+    /* width and color */
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.framed_title h2 {
+    width: 50%;
+    margin-top: -2%;
+    font-style: normal;
+    font-size: 1.5em;
+    color: #6B7280;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* width and color */
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#bar1 {
+    position: relative;
+    width: 100%;
+    height: 0px;
+    border: 1px solid rgba(128, 128, 128, 0.56);
+}
+
+#bar2 {
+    position: relative;
+    width: 100%;
+    height: 0px;
+    border: 1px solid rgba(128, 128, 128, 0.56);
+}
+
+/*FIN Title framed*/
+
+/*Formule tile*/
+
+.formule_list {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5%;
+}
+
+.bar {
+    position: relative;
+    left: 10%;
+    width: 80%;
+    border: 0.5px solid #504c4c;
+    margin-top: 5%;
+}
+
+.formule {
+    position: relative;
+    width: 20%;
+    height: 70%;
+    background: rgba(93, 167, 219, 0.2);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 25px 25px;
+    z-index: 2;
+}
+
+.formule p {
+    position: relative;
+    font-size: large;
+    font-weight: 900;
+    margin-top: 10%;
+    width: 80%;
+    color: #000000;
+    text-align: left;
+    margin-left: 10%;
+    margin-bottom: 10%;
+}
+
+.formule img {
+    width: 100%;
+    height: 35%;
+    position: relative;
+    z-index: 2;
+}
+
+.formule h1 {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 2em;
+    margin-left: 3%;
+    text-align: center;
+}
+
+.formule h2 {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 2.2em;
+    color: #5837D0;
+    margin-left: 20%;
+}
+
+.price {
+    position: relative;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.select_formule {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5%;
+}
+
+/*FIN Formule tile*/
+
+/* Buttons */
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+/*End buttons */
+
+/* Footer */
+
+footer {
+    background-color: #D9D9D9;
+    margin-bottom: 0%;
+    padding-top: 2%;
+    padding-bottom: 0.5%;
+    width: 100%;
+    position: relative;
+    max-height: 280px;
+}
+
+.enlaces {
+    position: relative;
+    text-align: center;
+}
+
+.enlaces a {
+    margin-right: 10px;
+    font-size: 0.9em;
+    color: #000000;
+}
+
+.redes_sociales {
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.redes_sociales img {
+    margin-right: 25px;
+}
+
+p {
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: small;
+}
+
+/*FIN Footer*/
