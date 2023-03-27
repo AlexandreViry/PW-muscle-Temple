@@ -164,11 +164,74 @@ section input {
 
 /*FIN Superponer elementos en la img principal*/
 
+/* Lista de las actividades*/
+
+.activities {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    margin: auto;
+}
+
+.activities p {
+    display: block;
+    text-align: center;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 1em;
+    color: black;
+    margin-bottom: 10%;
+    line-height: 25px;
+}
+
+.activity {
+    width: 100%;
+    position: relative;
+    height: 410px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.activity img {
+    position: relative;
+    height: 65%;
+    width: 37%;
+}
+
+.activitiesText {
+    width: 50%;
+    position: relative;
+    height: 100%;
+}
+
+.activitiesText h1 {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 2.5em;
+    display: block;
+    color: black;
+}
+
+.activitiesText p {
+    display: block;
+    text-align: left;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 1em;
+    color: black;
+}
+
+/*FIN lista de actividades*/
+
 /* Footer */
 
 footer {
     background-color: #D9D9D9;
-    bottom: 0%;
+    margin-bottom: 0%;
     padding-top: 1%;
     padding-bottom: 0.5%;
     width: 100%;
