@@ -19,7 +19,7 @@ header {
     justify-content: space-between;
     position: relative;
     width: 100%;
-    height: 12%;
+    height: 140px;
     min-height: 110px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -162,6 +162,14 @@ section input {
 }
 
 /*FIN Superponer elementos en la img principal*/
+
+.map {
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 10%;
+    display: flex;
+    width: 100%;
+}
 
 /*Title framed*/
 
