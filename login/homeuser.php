@@ -47,37 +47,50 @@ if($stmt = mysqli_prepare($link, $sql)){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome</title>
+    <title>Home</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="index.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="actividades.css" media="screen">
     <style type="text/css">
-        body{ font: 14px sans-serif; text-align: center; background-image: url("img/zeus2.png"); }
+        body{ font: 14px sans-serif; text-align: center; background-image: url("img/poseidon1.png"); }
     </style>
 </head>
 <body>
+    <header>
+        <!-- Image logo -->
+        <img src="img/logo.svg" alt="logo Empresa" style="width: 100px; height: 100px; max-width: 100%; max-height: 100%;">
+        <nav class="navbar" style="display: flex; align-items: center; margin-top: 20px;">
+            <a href="index.html">Menu Principal</a>
+            <a href="#">Instalaciones</a>
+            <a href="#">Horarios</a>
+            <a href="actividades.html">Actividades</a>
+            <a href="blog.html">Blog</a>
+            <a href="homeuser.php">Mi menu</a>
+        </nav>
+        <div style="margin-right: 20px;">
+            <a href="profile.php" class="btn btn-warning">Actualiza tu perfil</a>
+            <a href="logout.php" class="btn btn-danger">Cierra la sesión</a>
+        </div>
+    </header>
     <div class="page-header">
         <h1>Hola, <b><?php echo htmlspecialchars($name); ?></b>. Bienvenid@ a nuestro sitio.</h1>
         
     </div>
     <p>
+        <a href="reserva-entreno.php" class="btn btn-warning">Reserva un entrenamiento</a>
         <a href="reservasUsuario.php" class="btn btn-warning">Ver entrenamientos reservados</a>
-        <a href="profile.php" class="btn btn-warning">Actualiza tu perfil</a>
-        <a href="logout.php" class="btn btn-danger">Cierra la sesión</a>
     </p>
-</body>
-
-<footer>
+    <footer>
         <div class="enlaces">
             <a href="#">Muscle Temple</a>
             <a href="#">Legals</a>
             <a href="#">Contact Us</a>
         </div>
-
         <div class="redes_sociales">
             <img src="img/iconTwitter.png" alt="Twitter">
             <img src="img/iconInstagram.png" alt="Instagram">
             <img src="img/iconFacebook.png" alt="Facebook">
         </div>
-        <p>© 2022 MuscleTemple, All right reserved.</p>
-</footer>
+        <p>© 2023 MuscleTemple, All right reserved.</p>
+    </footer>
+</body>
 </html>

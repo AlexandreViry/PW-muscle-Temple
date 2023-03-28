@@ -36,7 +36,10 @@ require_once "config.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="reservasUsuario.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="actividades.css" media="screen">
+
     <title>Reservas</title>
 
     <!--INCLUIR FUENTE-->
@@ -52,19 +55,19 @@ require_once "config.php";
 
     <header>
         <!-- Image logo -->
-        <img src="img/logo.svg" alt="logo Empresa">
-        <nav class="navbar">
-            <a href="instalaciones.html">Instalaciones</a>
-            <a href="horarios.html">Horarios</a>
+        <img src="img/logo.svg" alt="logo Empresa" style="width: 100px; height: 100px; max-width: 100%; max-height: 100%;">
+        <nav class="navbar" style="display: flex; align-items: center; margin-top: 20px;">
+            <a href="index.html">Menu Principal</a>
+            <a href="#">Instalaciones</a>
+            <a href="#">Horarios</a>
             <a href="actividades.html">Actividades</a>
             <a href="blog.html">Blog</a>
-            <a href="homeuser.php">Menu</a>
+            <a href="homeuser.php">Mi menu</a>
         </nav>
-        <div>
-            <a href="profile.php">Perfil</a>
-            <a href="logout.php">Cerrar sesión</a>
+        <div style="margin-right: 20px;">
+            <a href="profile.php" class="btn btn-warning">Actualiza tu perfil</a>
+            <a href="logout.php" class="btn btn-danger">Cierra la sesión</a>
         </div>
-
     </header>
 
     <h1>Tus reservas</h1>
@@ -74,19 +77,21 @@ require_once "config.php";
         <label for="start">Seleccione fecha:</label>
         <input type="date" id="start" name="start"
                 min=<?php echo date("Y-m-d");?> max="2100-12-31"
-                value="2023-03-23">
+                value=<?php if(isset($_POST['start'])) echo $_POST['start']; ?>>
 
         <button type="submit" class="button-34" name="button">Ver mis reservas</button>
         <table class="styled-table">
             
             <thead>
                 <tr>
-                    <th>Fecha de Inicio</th>
-                    <th>Fecha de finalización</th>
+                    <th>Fecha</th>
+                    <th>Hora de Inicio</th>
+                    <th>Hora de finalización</th>
                     <th>Nombre del entrenador</th>
                     <th>Apellidos del entrenador</th>
                     <th>Tipo de ejercicio</th>
                     <th>Eliminar reserva</th>
+                    <th>Ver rutina</th>
                 </tr>
             </thead>
             <tbody>
@@ -111,8 +116,9 @@ require_once "config.php";
                         $entreno = mysqli_fetch_array($resultado);
                         if($i%2 == 0){
                             echo "<tr>";
-                                echo "<td>".$entreno["fechainicio"]."</td>";
-                                echo "<td>".$entreno["fechafin"]."</td>";
+                                echo "<td>" . date('d-m-y', strtotime($entreno['fechainicio'])) . "</td>";
+                                echo "<td>" . date('H:i', strtotime($entreno['fechainicio'])) . "</td>";
+                                echo "<td>" . date('H:i', strtotime($entreno['fechafin'])) . "</td>";
 
                                 $identrenador = $entreno["entrenador_id"];
                                 $consulta = "SELECT nombre, apellidos FROM usuario WHERE id = '$identrenador'";
@@ -130,12 +136,14 @@ require_once "config.php";
                                 $id = $entreno["id"];
                                 $etiqueta = "checkbox" . $i;
                                 echo "<td>" . "<input type=\"checkbox\" name=\"$etiqueta\" value=\"$id\"> "."</td>";
+                                echo "<td><button type=\"submit\" class=\"button-34\" name=\"ver\" value='$id'>Ver</button></td>";
                             echo "</tr>";
                         }
                         else{
                             echo "<tr class=\"active-row\">";
-                                echo "<td>".$entreno["fechainicio"]."</td>";
-                                echo "<td>".$entreno["fechafin"]."</td>";
+                                echo "<td>" . date('d-m-y', strtotime($entreno['fechainicio'])) . "</td>";
+                                echo "<td>" . date('H:i', strtotime($entreno['fechainicio'])) . "</td>";
+                                echo "<td>" . date('H:i', strtotime($entreno['fechafin'])) . "</td>";
 
                                 $identrenador = $entreno["entrenador_id"];
                                 $consulta = "SELECT nombre, apellidos FROM usuario WHERE id = '$identrenador'";
@@ -153,6 +161,7 @@ require_once "config.php";
                                 $id = $entreno["id"];
                                 $etiqueta = "checkbox" . $i;
                                 echo "<td>" . "<input type=\"checkbox\" name='$etiqueta' value=\"$id\"> "."</td>";
+                                echo "<td><button type=\"submit\" class=\"button-34\" name=\"ver\" value='$id'>Ver</button></td>";
                             echo "</tr>";
                         }
                     }
@@ -180,6 +189,11 @@ require_once "config.php";
                         }
                     }
                 }
+                if(isset($_POST['ver'])){
+                    $valor = $_POST['ver'];
+                    $_SESSION["identreno"] = htmlentities($valor);
+                    header("Location: entrenamientosUsuario.php");
+                }
                 mysqli_close($link);
             ?>
             </tbody>
@@ -194,15 +208,13 @@ require_once "config.php";
             <a href="#">Legals</a>
             <a href="#">Contact Us</a>
         </div>
-
-        <div class="redes_sociales">
+        <!--<div class="redes_sociales">
             <img src="img/iconTwitter.png" alt="Twitter">
             <img src="img/iconInstagram.png" alt="Instagram">
             <img src="img/iconFacebook.png" alt="Facebook">
-        </div>
-        <p>© 2022 MuscleTemple, All right reserved.</p>
+        </div>-->
+        <p>© 2023 MuscleTemple, All right reserved.</p>
     </footer>
 
 </body>
-
 </html>

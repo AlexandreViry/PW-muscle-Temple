@@ -54,51 +54,49 @@ mysqli_stmt_close($stmt);
     <meta charset="UTF-8">
     <title>Welcome</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="reservasUsuario.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="actividades.css" media="screen">
     <style type="text/css">
-        body{ font: 14px sans-serif; text-align: center;}
+        body{ font: 14px sans-serif; text-align: center; background-image: url("img/zeus6.png");}
     </style>
 </head>
 <body>
     <header>
         <!-- Image logo -->
-        <img src="img/logo.svg" alt="logo Empresa">
-        <nav class="navbar">
-            <a href="instalaciones.html">Instalaciones</a>
-            <a href="horarios.html">Horarios</a>
+        <img src="img/logo.svg" alt="logo Empresa" style="width: 100px; height: 100px; max-width: 100%; max-height: 100%;">
+        <nav class="navbar" style="display: flex; align-items: center; margin-top: 20px;">
+            <a href="index.html">Menu Principal</a>
+            <a href="#">Instalaciones</a>
+            <a href="#">Horarios</a>
             <a href="actividades.html">Actividades</a>
             <a href="blog.html">Blog</a>
-            <a class="btn btn-link" href="homeadmin.php">Menu</a>
-
+            <a href="homeadmin.php">Mi menu</a>
         </nav>
-        <div>
-            <a href="logout.php">Cerrar sesión</a>
+        <div style="margin-right: 20px;">
+            <a href="profile.php" class="btn btn-warning">Actualiza tu perfil</a>
+            <a href="logout.php" class="btn btn-danger">Cierra la sesión</a>
         </div>
     </header>
 
-    <div class="page-header">
-        <h1>Bienvenido <b><?php echo htmlspecialchars($name); ?></b> administrador del Olimpo.</h1>
+    <div class="page-header" style="margin-top: 0;">
+        <h1 style="color: white;">Bienvenido <b><?php echo htmlspecialchars($name); ?></b> administrador del Olimpo.</h1>
     </div>
     <p>
         <a href="adminUsers.php" class="btn btn-warning">Gestionar usuarios</a>
-        <a href="adminModifyUser.php" class="btn btn-warning">Modifica un usuario</a>
         <a href="adminRegister.php" class="btn btn-warning">Registra un nuevo usuario</a>
-        <a href="profile.php" class="btn btn-warning">Actualiza tu perfil</a>
-        <a href="logout.php" class="btn btn-danger">Cierra la sesión</a>
     </p>
-</body>
-<footer>
+
+    <footer>
         <div class="enlaces">
             <a href="#">Muscle Temple</a>
             <a href="#">Legals</a>
             <a href="#">Contact Us</a>
         </div>
-
         <div class="redes_sociales">
             <img src="img/iconTwitter.png" alt="Twitter">
             <img src="img/iconInstagram.png" alt="Instagram">
             <img src="img/iconFacebook.png" alt="Facebook">
         </div>
-        <p>© 2022 MuscleTemple, All right reserved.</p>
-</footer>
+        <p>© 2023 MuscleTemple, All right reserved.</p>
+    </footer>
+</body>
 </html>

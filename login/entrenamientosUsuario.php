@@ -7,7 +7,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
 }else{
-    if($_SESSION["tipousuario_id"] !== 2) {
+    if($_SESSION["tipousuario_id"] !== 3) {
         switch($_SESSION["tipousuario_id"]){
             case 1:
                 header("location: homeadmin.php");
@@ -34,6 +34,7 @@ require_once "config.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="reservasUsuario.css" media="screen">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="actividades.css" media="screen">
     <title>Pagina principal de la web</title>
 
@@ -50,23 +51,22 @@ require_once "config.php";
     <header>
         <!-- Image logo -->
         <img src="img/logo.svg" alt="logo Empresa" style="width: 100px; height: 100px; max-width: 100%; max-height: 100%;">
-        <nav class="navbar">
+        <nav class="navbar" style="display: flex; align-items: center; margin-top: 20px;">
             <a href="index.html">Menu Principal</a>
             <a href="#">Instalaciones</a>
             <a href="#">Horarios</a>
             <a href="actividades.html">Actividades</a>
             <a href="blog.html">Blog</a>
-            <a href="hometrainer.php">Mi menu</a>
+            <a href="homeuser.php">Mi menu</a>
         </nav>
         <div style="margin-right: 20px;">
-            <a href="profile.php" class="btn btn-warning" style="white-space: nowrap;">Actualiza tu perfil</a>
-            <a href="logout.php" class="btn btn-danger" style="white-space: nowrap;">Cierra la sesión</a>
+            <a href="profile.php" class="btn btn-warning">Actualiza tu perfil</a>
+            <a href="logout.php" class="btn btn-danger">Cierra la sesión</a>
         </div>
     </header>
 
     <form method="post">
     <?php
-
         mysqli_select_db($link,"gimnasio");
 
         $idreserva = $_SESSION['identreno'];
@@ -85,7 +85,6 @@ require_once "config.php";
                     echo "<th>Actividad</th>";
                     echo "<th>Intensidad</th>";
                     echo "<th>Tipo de entrenamiento</th>";
-                    echo "<th> </th>";
                 echo "</tr>";
             echo "</thead>";
             echo "<tbody>";
@@ -115,7 +114,6 @@ require_once "config.php";
                     echo "<td>".$tipo["nombre"]."</td>";
 
                     $idfila = $fila["id"];
-                    echo "<td><button type=\"submit\" class=\"button-34\" name=\"delete\" value='$idfila'>Borrar</button></td>";
                     echo "</tr>";
 
                 }
@@ -125,15 +123,9 @@ require_once "config.php";
     <button type="submit" class="button-34" name="back" >Volver</button>
 </form>
     <?php
-        if(isset($_POST['delete'])){
-            $identreno = $_POST['delete'];
-            $consulta = "DELETE FROM entrenamiento WHERE id ='$identreno'";
-            $resultado = mysqli_query($link,$consulta);
-            header("Location: mostrarEntrenamientos.php");
-        }
 
         if(isset($_POST['back'])){
-            header("Location: administrarReservas.php");
+            header("Location: reservasUsuario.php");
         }
     ?>
 
@@ -143,11 +135,11 @@ require_once "config.php";
             <a href="#">Legals</a>
             <a href="#">Contact Us</a>
         </div>
-        <div class="redes_sociales">
+        <!--<div class="redes_sociales">
             <img src="img/iconTwitter.png" alt="Twitter">
             <img src="img/iconInstagram.png" alt="Instagram">
             <img src="img/iconFacebook.png" alt="Facebook">
-        </div>
+        </div>-->
         <p>© 2023 MuscleTemple, All right reserved.</p>
     </footer>
 

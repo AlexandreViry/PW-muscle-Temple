@@ -233,24 +233,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </style>
 </head>
 <body>
-<nav class= "navbar-collapse.in">
     <header>
         <!-- Image logo -->
-        <img src="img/logo.svg" alt="logo Empresa">
-        <nav class="navbar">
-            <a href="instalaciones.html">Instalaciones</a>
-            <a href="horarios.html">Horarios</a>
+        <img src="img/logo.svg" alt="logo Empresa" style="width: 100px; height: 100px; max-width: 100%; max-height: 100%;">
+        <nav class="navbar" style="display: flex; align-items: center; margin-top: 20px;">
+            <a href="index.html">Menu Principal</a>
+            <a href="#">Instalaciones</a>
+            <a href="#">Horarios</a>
             <a href="actividades.html">Actividades</a>
             <a href="blog.html">Blog</a>
-            <a class="btn btn-link" href="hometrainer.php">Menu</a>
-
+            <a href="homeadmin.php">Mi menu</a>
         </nav>
-        <div>
-            <a href="logout.php">Cerrar sesión</a>
+        <div style="margin-right: 20px;">
+            <a href="profile.php" class="btn btn-warning">Actualiza tu perfil</a>
+            <a href="logout.php" class="btn btn-danger">Cierra la sesión</a>
         </div>
     </header>
-
-
 
     <div class="wrapper">
         <h2>Registro</h2>
@@ -260,7 +258,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <label>email de usuario</label>
                 <input type="text" name="email" class="form-control" value="<?php echo $email; ?>">
                 <span class="help-block"><?php echo $email_err; ?></span>
-            </div>    
+            </div>
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Contraseña</label>
                 <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
@@ -314,11 +312,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="submit" class="btn btn-primary" value="Registrar">
                 <input type="reset" class="btn btn-default" value="Borrar">
             </div>
-            <p><a href="homeadmin.php">Volver</a></p>
         </form>
     </div>
 
-    <panel-footer>
+    <footer>
         <div class="enlaces">
             <a href="#">Muscle Temple</a>
             <a href="#">Legals</a>
@@ -329,8 +326,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <img src="img/iconInstagram.png" alt="Instagram">
             <img src="img/iconFacebook.png" alt="Facebook">
         </div>
-        <p>© 2022 MuscleTemple, All right reserved.</p>
-    </panel-footer>
-</nav>
+        <p>© 2023 MuscleTemple, All right reserved.</p>
+    </footer>
 </body>
 </html>

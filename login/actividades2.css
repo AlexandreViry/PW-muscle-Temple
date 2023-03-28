@@ -30,14 +30,6 @@ header img {
     height: auto;
 }
 
-.map {
-    justify-content: center;
-    margin: auto;
-    margin-bottom: 10%;
-    display: flex;
-    width: 100%;
-}
-
 /* Menú Central*/
 .navbar {
     position: absolute;
@@ -99,14 +91,15 @@ section {
 }
 
 #fondoindex {
-    filter: brightness(85%);
+    filter: brightness(75%);
     grid-area: superponerCards;
     width: 100%;
+    height:80%;
     max-width: 2000px;
 }
 
 section h2 {
-    width: 40%;
+    width: 60%;
     height: 10%;
     grid-area: superponerCards;
     font-size: 3vw;
@@ -127,7 +120,7 @@ section h2 {
 section h1 {
     grid-area: superponerCards;
     position: relative;
-    margin-top: 12%;
+    margin-top: 10%;
 
     font-family: 'Montserrat';
     font-size: 6em;
@@ -144,7 +137,7 @@ section h3 {
 
     font-family: 'Montserrat';
     font-style: normal;
-    font-size: 8em;
+    font-size: 4em;
     color: #FFFFFF;
     mix-blend-mode: normal;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -171,156 +164,79 @@ section input {
 
 /*FIN Superponer elementos en la img principal*/
 
-/*Title framed*/
+/* Lista de las actividades*/
 
-.framed_title {
+.activities {
     position: relative;
-    width: 75%;
-    margin-left: 12.5%;
-    margin-bottom: 5%;
-}
-
-.framed_title h1 {
-    width: 65%;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 3em;
-    color: #FFFFFF;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    -webkit-text-stroke: 1px black;
-    /* width and color */
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.framed_title h2 {
+    height: 100%;
     width: 50%;
-    margin-top: -2%;
+    margin: auto;
+}
+
+.activities p {
+    display: block;
+    text-align: center;
+    font-weight: 900;
     font-style: normal;
-    font-size: 1.5em;
-    color: #6B7280;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    /* width and color */
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-#bar1 {
-    position: relative;
-    width: 100%;
-    height: 0px;
-    border: 1px solid rgba(128, 128, 128, 0.56);
-}
-
-#bar2 {
-    position: relative;
-    width: 100%;
-    height: 0px;
-    border: 1px solid rgba(128, 128, 128, 0.56);
-}
-
-/*FIN Title framed*/
-
-/*Formule tile*/
-
-.formule_list {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 5%;
-}
-
-.bar {
-    position: relative;
-    left: 10%;
-    width: 80%;
-    border: 0.5px solid #504c4c;
-    margin-top: 5%;
-}
-
-.formule {
-    position: relative;
-    width: 20%;
-    height: 70%;
-    background: rgba(93, 167, 219, 0.2);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 0px 0px 25px 25px;
-    z-index: 2;
-}
-
-.formule p {
-    position: relative;
-    font-size: large;
-    font-weight: 900;
-    margin-top: 10%;
-    width: 80%;
-    color: #000000;
-    text-align: left;
-    margin-left: 10%;
+    font-size: 1em;
+    color: black;
     margin-bottom: 10%;
+    line-height: 25px;
 }
 
-.formule img {
+.activity {
     width: 100%;
-    height: 35%;
     position: relative;
-    z-index: 2;
-}
-
-.formule h1 {
-    position: relative;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 900;
-    font-size: 2em;
-    margin-left: 3%;
-    text-align: center;
-}
-
-.formule h2 {
-    position: relative;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 900;
-    font-size: 2.2em;
-    color: #5837D0;
-    margin-left: 20%;
-}
-
-.price {
-    position: relative;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.select_formule {
+    height: 410px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin-bottom: 5%;
 }
 
-/*FIN Formule tile*/
-
-/* Buttons */
-.btn-primary {
-    color: #fff;
-    background-color: #337ab7;
-    border-color: #2e6da4;
+.activity img {
+    position: relative;
+    height: 65%;
+    width: 37%;
 }
 
-/*End buttons */
+.activitiesText {
+    width: 50%;
+    position: relative;
+    height: 100%;
+}
+
+.activitiesText h1 {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 2.5em;
+    display: block;
+    color: black;
+}
+
+.activitiesText p {
+    display: block;
+    text-align: left;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 1em;
+    color: black;
+}
+
+/*FIN lista de actividades*/
 
 /* Footer */
 
 footer {
     background-color: #D9D9D9;
-    bottom: 0%;
+    margin-bottom: 0%;
     padding-top: 1%;
     padding-bottom: 0.5%;
     width: 100%;
     display: block;
-    position: relative;
+    position: absolute;
 }
 
 .enlaces {

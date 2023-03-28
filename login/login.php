@@ -69,7 +69,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     // Bind result variables
                     mysqli_stmt_bind_result($stmt, $id, $email, $hashed_password, $type_user);
                     if(mysqli_stmt_fetch($stmt)){
-                        echo $id . $email . $hashed_password . $type_user;
                         if(password_verify($password, $hashed_password)){
                             // password is correct, so start a new session
                             session_start();
@@ -119,12 +118,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="actividades.css" media="screen">
+
     <style type="text/css">
         body{ font: 14px sans-serif; background-image: url("img/herc1.png");}
         .wrapper{ width: 350px; padding: 20px; margin: 0 auto;}
     </style>
 </head>
 <body>
+    <header>
+        <!-- Image logo -->
+        <img src="img/logo.svg" alt="logo Empresa" style="width: 100px; height: 100px; max-width: 100%; max-height: 100%;">
+        <nav class="navbar" style="display: flex; align-items: center; margin-top: 20px;">
+            <a href="index.html">Menu Principal</a>
+            <a href="#">Instalaciones</a>
+            <a href="#">Horarios</a>
+            <a href="actividades.html">Actividades</a>
+            <a href="blog.html">Blog</a>
+        </nav>
+        <div>
+            <a href="login.php">Inicia Sesión</a>
+            <a href="register.php">Regístrate</a>
+        </div>
+    </header>
     <div class="wrapper">
         <h2>Login</h2>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -144,5 +160,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <p>¿No tienes una cuenta? <a href="register.php">Regístrate ahora</a>.</p>
         </form>
     </div>    
+    <footer>
+        <div class="enlaces">
+            <a href="#">Muscle Temple</a>
+            <a href="#">Legals</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <!--<div class="redes_sociales">
+            <img src="img/iconTwitter.png" alt="Twitter">
+            <img src="img/iconInstagram.png" alt="Instagram">
+            <img src="img/iconFacebook.png" alt="Facebook">
+        </div>-->
+        <p>© 2023 MuscleTemple, All right reserved.</p>
+    </footer>
 </body>
 </html>

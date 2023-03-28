@@ -95,7 +95,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 mysqli_stmt_store_result($stmt);
                 
                 if(mysqli_stmt_num_rows($stmt) == 1){
-                    $new_email_err = "Este usuario ya está en uso.";
+                    mysqli_stmt_bind_result($stmt, $id);
+                    mysqli_stmt_fetch($stmt);
+                    if ($id != $_SESSION["idclient"]) {
+                        $new_email_err = "Este email pertenece a otro usuario.";
+                    } else {
+                        $new_email = trim($_POST["email"]);
+                    }
                 } else{
                     $new_email = trim($_POST["email"]);
                 }
@@ -145,8 +151,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 //echo $stmt;
                 //echo $_SESSION["idclient"];
                 
-                if(mysqli_stmt_num_rows($stmt) == 1 && $stmt != $_SESSION["idclient"]){
-                    $new_dni_err = "Este dni pertenece a otro usuario.";
+                if(mysqli_stmt_num_rows($stmt) == 1){
+                    mysqli_stmt_bind_result($stmt, $id);
+                    mysqli_stmt_fetch($stmt);
+                    if ($id != $_SESSION["idclient"]) {
+                        $new_dni_err = "Este dni pertenece a otro usuario.";
+                    } else {
+                        $new_dni = trim($_POST["dni"]);
+                    }
                 } else{
                     $new_dni = trim($_POST["dni"]);
                 }
@@ -210,12 +222,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Actualiza tu perfil</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="actividades.css" media="screen">
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{ width: 350px; padding: 20px; margin: 0 auto;}
     </style>
 </head>
 <body>
+    <header>
+        <!-- Image logo -->
+        <img src="img/logo.svg" alt="logo Empresa" style="width: 100px; height: 100px; max-width: 100%; max-height: 100%;">
+        <nav class="navbar" style="display: flex; align-items: center; margin-top: 20px;">
+            <a href="index.html">Menu Principal</a>
+            <a href="#">Instalaciones</a>
+            <a href="#">Horarios</a>
+            <a href="actividades.html">Actividades</a>
+            <a href="blog.html">Blog</a>
+            <a href="homeadmin.php">Mi menu</a>
+        </nav>
+        <div style="margin-right: 20px;">
+            <a href="profile.php" class="btn btn-warning">Actualiza tu perfil</a>
+            <a href="logout.php" class="btn btn-danger">Cierra la sesión</a>
+        </div>
+    </header>
     <div class="wrapper">
         <h2>Actualizar usuario</h2>
         <p>Complete este formulario para actualizar al usuario.</p>
@@ -251,5 +280,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
         </form>
     </div>
+    <footer>
+        <div class="enlaces">
+            <a href="#">Muscle Temple</a>
+            <a href="#">Legals</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="redes_sociales">
+            <img src="img/iconTwitter.png" alt="Twitter">
+            <img src="img/iconInstagram.png" alt="Instagram">
+            <img src="img/iconFacebook.png" alt="Facebook">
+        </div>
+        <p>© 2023 MuscleTemple, All right reserved.</p>
+    </footer>
 </body>
 </html>

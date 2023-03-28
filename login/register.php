@@ -206,8 +206,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Registro</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="actividades.css" media="screen">
     <style type="text/css">
-        body{ font: 14px sans-serif; }
+        body{ font: 14px sans-serif; background-image: url("img/afrodita4.png");}
         .wrapper{ width: 350px; padding: 20px; margin: 0 auto; }
         <!- .left-image, .right-image { width: 500; height: auto; margin: 10px; margin-top: 20px; align-self: flex-end; } -->
         .left-image, .right-image { display: inline-block; width: 500px; height: auto; margin: 80px; horizontal-align: middle; }
@@ -216,8 +217,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </style>
 </head>
 <body>
-    <img src="img/Hera.png" class="left-image">
-    <img src="img/poseidon.png" class="right-image">
+    <header>
+        <!-- Image logo -->
+        <img src="img/logo.svg" alt="logo Empresa" style="width: 100px; height: 100px; max-width: 100%; max-height: 100%;">
+        <nav class="navbar" style="display: flex; align-items: center; margin-top: 20px;">
+            <a href="index.html">Menu Principal</a>
+            <a href="#">Instalaciones</a>
+            <a href="#">Horarios</a>
+            <a href="actividades.html">Actividades</a>
+            <a href="blog.html">Blog</a>
+        </nav>
+        <div>
+            <a href="login.php">Inicia Sesión</a>
+            <a href="register.php">Regístrate</a>
+        </div>
+    </header>
         
     <div class="wrapper">
         <h2>Registro</h2>
@@ -265,5 +279,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <p>¿Ya tienes una cuenta? <a href="login.php">Ingresa aquí</a>.</p>
         </form>
     </div>    
+    <footer>
+        <div class="enlaces">
+            <a href="#">Muscle Temple</a>
+            <a href="#">Legals</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <!--<div class="redes_sociales">
+            <img src="img/iconTwitter.png" alt="Twitter">
+            <img src="img/iconInstagram.png" alt="Instagram">
+            <img src="img/iconFacebook.png" alt="Facebook">
+        </div>-->
+        <p>© 2023 MuscleTemple, All right reserved.</p>
+    </footer>
 </body>
 </html>

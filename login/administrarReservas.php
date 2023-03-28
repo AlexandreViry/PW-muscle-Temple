@@ -34,6 +34,7 @@ require_once "config.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="reservasUsuario.css" media="screen">
+
     <title>Reservas</title>
 
     <!--INCLUIR FUENTE-->
@@ -48,19 +49,19 @@ require_once "config.php";
 
 	<header>
         <!-- Image logo -->
-        <img src="img/logo.svg" alt="logo Empresa">
-        <nav class="navbar">
-            <a href="instalaciones.html">Instalaciones</a>
-            <a href="horarios.html">Horarios</a>
+        <img src="img/logo.svg" alt="logo Empresa" style="width: 100px; height: 100px; max-width: 100%; max-height: 100%;">
+        <nav class="navbar" style="display: flex; align-items: center; margin-top: 20px;">
+            <a href="index.html">Menu Principal</a>
+            <a href="#">Instalaciones</a>
+            <a href="#">Horarios</a>
             <a href="actividades.html">Actividades</a>
             <a href="blog.html">Blog</a>
-            <a class="btn btn-link" href="hometrainer.php">Menu</a>
-
+            <a href="hometrainer.php">Mi menu</a>
         </nav>
-        <div>
-            <a href="logout.php">Cerrar sesión</a>
+        <div style="margin-right: 20px;">
+            <a href="profile.php" class="btn btn-warning"style="display: inline-block;">Actualiza tu perfil</a>
+            <a href="logout.php" class="btn btn-danger" style="display: inline-block;">Cierra la sesión</a>
         </div>
-
     </header>
 
 	<h1> Clases programadas </h1>
@@ -286,22 +287,19 @@ require_once "config.php";
         }
     ?>
 
-
     <footer>
         <div class="enlaces">
             <a href="#">Muscle Temple</a>
             <a href="#">Legals</a>
             <a href="#">Contact Us</a>
         </div>
-
         <div class="redes_sociales">
             <img src="img/iconTwitter.png" alt="Twitter">
             <img src="img/iconInstagram.png" alt="Instagram">
             <img src="img/iconFacebook.png" alt="Facebook">
         </div>
-        <p>© 2022 MuscleTemple, All right reserved.</p>
+        <p>© 2023 MuscleTemple, All right reserved.</p>
     </footer>
-
 </body>
 
 </html>

@@ -85,16 +85,34 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Actualiza tu contraseña</title>
+    <title>Actualizar contraseña</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="actividades.css" media="screen">
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{ width: 350px; padding: 20px; margin: 0 auto;}
     </style>
 </head>
 <body>
+    <header>
+        <!-- Image logo -->
+        <img src="img/logo.svg" alt="logo Empresa" style="width: 100px; height: 100px; max-width: 100%; max-height: 100%;">
+        <nav class="navbar" style="display: flex; align-items: center; margin-top: 20px;">
+            <a href="index.html">Menu Principal</a>
+            <a href="#">Instalaciones</a>
+            <a href="#">Horarios</a>
+            <a href="actividades.html">Actividades</a>
+            <a href="blog.html">Blog</a>
+            <a href="homeuser.php">Mi menu</a>
+        </nav>
+        <div style="margin-right: 20px;">
+            <a href="profile.php" class="btn btn-warning">Actualiza tu perfil</a>
+            <a href="logout.php" class="btn btn-danger">Cierra la sesión</a>
+        </div>
+    </header>
+
     <div class="wrapper">
-        <h2>Actualiza tu contraseña</h2>
+        <h2 style="white-space: nowrap;">Actualiza tu contraseña</h2>
         <p>Complete este formulario para restablecer su contraseña.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
             <div class="form-group <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
@@ -113,5 +131,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
         </form>
     </div>    
+    <footer>
+        <div class="enlaces">
+            <a href="#">Muscle Temple</a>
+            <a href="#">Legals</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="redes_sociales">
+            <img src="img/iconTwitter.png" alt="Twitter">
+            <img src="img/iconInstagram.png" alt="Instagram">
+            <img src="img/iconFacebook.png" alt="Facebook">
+        </div>
+        <p>© 2023 MuscleTemple, All right reserved.</p>
+    </footer>
 </body>
 </html>
